@@ -1,0 +1,192 @@
+{
+  "_comment": "Hermes worker-node registry. Hermes is the orchestrator; these CLI agents are worker nodes. 'verified' fields were measured by live PONG probe on 2026-09-09, not assumed. Re-probe with: python D:\\.hermes\\orchestrator\\registry.py --probe",
+  "updated_at": "2026-09-09",
+  "nodes": {
+    "claude": {
+      "bin": "claude",
+      "argv": [
+        "-p",
+        "{prompt}"
+      ],
+      "argv_yolo": [
+        "-p",
+        "{prompt}",
+        "--dangerously-skip-permissions"
+      ],
+      "cwd_flag": null,
+      "auth": "subscription",
+      "cost": "paid",
+      "verified": true,
+      "verified_at": "2026-09-09",
+      "latency_s": 8,
+      "strengths": [
+        "deep-reasoning",
+        "refactor",
+        "long-context",
+        "research"
+      ],
+      "tier": 2,
+      "notes": "Anthropic Claude Code 2.1.248 via winget. Highest quality, use for hard reasoning.",
+      "mcp_flags": [
+        "--mcp-config",
+        "{config}",
+        "--strict-mcp-config",
+        "--allowedTools",
+        "mcp__arduino mcp__arxiv mcp__blender mcp__build123d mcp__cad-blender mcp__cineforge mcp__cua-driver mcp__fetch mcp__filesystem mcp__github mcp__iris mcp__jupyter mcp__kicad mcp__kinocut mcp__local-rag mcp__memory mcp__obsidian-vault mcp__paddleocr mcp__pdf-reader mcp__playwright mcp__sequential-thinking mcp__sqlite mcp__storyforge mcp__yfinance",
+        "--permission-mode",
+        "acceptEdits"
+      ],
+      "mcp_note": "Grants are SERVER-scoped: 'mcp__filesystem' works, 'mcp__*' does NOT (wildcards are not expanded). Verified 2026-09-09."
+    },
+    "cmdc": {
+      "bin": "cmdc",
+      "argv": [
+        "-p",
+        "{prompt}"
+      ],
+      "argv_yolo": [
+        "-p",
+        "{prompt}",
+        "--permission-mode",
+        "auto-accept"
+      ],
+      "auth": "subscription",
+      "cost": "paid",
+      "verified": true,
+      "verified_at": "2026-09-09",
+      "latency_s": 7,
+      "strengths": [
+        "coding",
+        "general",
+        "fast"
+      ],
+      "tier": 2,
+      "notes": "command-code CLI 1.15.0. Claude-compatible flag surface.",
+      "mcp_flags": [
+        "--mcp-config",
+        "{config}",
+        "--strict-mcp-config",
+        "--allowedTools",
+        "mcp__arduino mcp__arxiv mcp__blender mcp__build123d mcp__cad-blender mcp__cineforge mcp__cua-driver mcp__fetch mcp__filesystem mcp__github mcp__iris mcp__jupyter mcp__kicad mcp__kinocut mcp__local-rag mcp__memory mcp__obsidian-vault mcp__paddleocr mcp__pdf-reader mcp__playwright mcp__sequential-thinking mcp__sqlite mcp__storyforge mcp__yfinance",
+        "--permission-mode",
+        "acceptEdits"
+      ],
+      "mcp_note": "Grants are SERVER-scoped: 'mcp__filesystem' works, 'mcp__*' does NOT (wildcards are not expanded). Verified 2026-09-09."
+    },
+    "opencode": {
+      "bin": "opencode",
+      "argv": [
+        "run",
+        "{prompt}"
+      ],
+      "argv_yolo": [
+        "run",
+        "{prompt}"
+      ],
+      "auth": "builtin-free",
+      "cost": "free",
+      "verified": true,
+      "verified_at": "2026-09-09",
+      "latency_s": 12,
+      "model_hint": "nemotron-3-ultra-free",
+      "strengths": [
+        "bulk",
+        "scan",
+        "summarize",
+        "boilerplate"
+      ],
+      "tier": 0,
+      "notes": "FREE tier \u2014 always try first for wide/cheap fan-out. NOTE: '--prompt' opens the TUI and hangs; the correct headless form is 'opencode run <msg>'.",
+      "mcp_flags": [],
+      "mcp_note": "Reads MCP from its own config (opencode.json), not a CLI flag; run mcp_export.py into its config dir."
+    },
+    "copilot": {
+      "bin": "copilot",
+      "argv": [
+        "-p",
+        "{prompt}",
+        "--allow-all-tools"
+      ],
+      "argv_yolo": [
+        "-p",
+        "{prompt}",
+        "--allow-all"
+      ],
+      "auth": "github",
+      "cost": "credits",
+      "verified": true,
+      "verified_at": "2026-09-09",
+      "latency_s": 10,
+      "strengths": [
+        "github",
+        "code-review",
+        "repo-aware"
+      ],
+      "tier": 1,
+      "notes": "GitHub Copilot CLI 1.0.51. Consumes AI credits; prefer for GitHub-native work.",
+      "mcp_flags": [],
+      "mcp_note": "Copilot CLI manages MCP via `copilot mcp add`."
+    },
+    "kilocode": {
+      "bin": "kilocode",
+      "argv": [
+        "run",
+        "{prompt}"
+      ],
+      "auth": "NEEDS_LOGIN",
+      "cost": "unknown",
+      "verified": false,
+      "verified_at": "2026-09-09",
+      "strengths": [
+        "coding"
+      ],
+      "tier": 3,
+      "notes": "DISABLED: probe returned 'You need to sign in to use this model.' Run `kilocode auth login`, then re-probe.",
+      "mcp_flags": [],
+      "mcp_note": "Reads MCP from its own config (opencode.json), not a CLI flag; run mcp_export.py into its config dir."
+    },
+    "gemini": {
+      "bin": "gemini",
+      "argv": [
+        "-p",
+        "{prompt}"
+      ],
+      "auth": "NEEDS_KEY",
+      "cost": "free-tier",
+      "verified": false,
+      "verified_at": "2026-09-09",
+      "strengths": [
+        "long-context",
+        "multimodal"
+      ],
+      "tier": 3,
+      "notes": "DISABLED: needs GEMINI_API_KEY or GOOGLE_GENAI_USE_GCA in ~/.gemini/settings.json. Would become a strong FREE node once authed."
+    },
+    "puku-cli": {
+      "bin": "puku-cli",
+      "argv": [
+        "-p",
+        "{prompt}"
+      ],
+      "auth": "NEEDS_LOGIN",
+      "cost": "unknown",
+      "verified": false,
+      "verified_at": "2026-09-09",
+      "strengths": [
+        "coding"
+      ],
+      "tier": 3,
+      "notes": "DISABLED: 'Not logged in - Please run /login'.",
+      "mcp_flags": [
+        "--mcp-config",
+        "{config}",
+        "--strict-mcp-config",
+        "--allowedTools",
+        "mcp__arduino mcp__arxiv mcp__blender mcp__build123d mcp__cad-blender mcp__cineforge mcp__cua-driver mcp__fetch mcp__filesystem mcp__github mcp__iris mcp__jupyter mcp__kicad mcp__kinocut mcp__local-rag mcp__memory mcp__obsidian-vault mcp__paddleocr mcp__pdf-reader mcp__playwright mcp__sequential-thinking mcp__sqlite mcp__storyforge mcp__yfinance",
+        "--permission-mode",
+        "acceptEdits"
+      ],
+      "mcp_note": "Grants are SERVER-scoped: 'mcp__filesystem' works, 'mcp__*' does NOT (wildcards are not expanded). Verified 2026-09-09."
+    }
+  }
+}
