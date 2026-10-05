@@ -1,0 +1,29 @@
+{
+  "kind": "source-guide",
+  "source_head": "7166ec8dc1a17285bf5483846c5bc6c9c7b64b85",
+  "source_tree": "cd7c469b95ac95eeffbc6dd3de655c020fc7127c",
+  "source_repository": "https://github.com/MdSadman2004/hermes-orchestrator",
+  "nodes": [
+    {
+      "label": "Worker dispatch",
+      "path": "orchestrator/dispatch.py",
+      "detail": "CLI routes, fallback, subprocess capture, and timeouts."
+    },
+    {
+      "label": "Verification harness",
+      "path": "orchestrator/harness.py",
+      "detail": "Step verifiers, retries, checkpoints, and ledgers."
+    },
+    {
+      "label": "Shared memory",
+      "path": "orchestrator/memory_bus.py",
+      "detail": "Per-entry files, JSONL index, and vector-clock metadata."
+    }
+  ],
+  "caption": "Source guide drawn from repository files; not a runtime screenshot or fresh benchmark.",
+  "generated_by": "render_guides.py",
+  "image_dimensions": [
+    1600,
+    960
+  ]
+}
